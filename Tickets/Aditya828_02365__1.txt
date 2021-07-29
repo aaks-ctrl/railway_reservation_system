@@ -1,0 +1,13 @@
+Name of Passanger: ADITYA CHORARIA
+
+Train booked: RAJDHANI SPL
+                                                  Train number: 02365
+Train departure time: 20:25
+                                                  From: DELHI
+Train arrival time: 03:55
+                                                  To  : JAIPUR
+Coach no. : B1
+                                                  Seat no. booked :   1
+PNR:  1
+Status: Cancelled
+Ticket cost: INR 741.00

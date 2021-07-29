@@ -1,0 +1,39 @@
+void *searchbyno(char *z){
+char (*tr_arr)[100];
+char checkray[1000][8][100];
+tr_arr = z;
+train *a;
+train *temp;
+a = loadtrain();
+temp = a;
+int po=0;
+for(;temp != NULL;/*po++*/)
+{
+  for(int i=0;**(tr_arr+i)!='\0';i++)
+  {
+    char *sr1;
+    sr1 = strstr(temp->tr_no,*(tr_arr+i));
+    if(sr1)
+    {
+      strcpy(checkray[po][0],temp->tr_name);
+      strcpy(checkray[po][1],temp->dest);
+      strcpy(checkray[po][2],temp->arr_time);
+      strcpy(checkray[po][3],temp->dep_time);
+      sprintf(checkray[po][4],"%d",temp->count);
+      sprintf(checkray[po][5],"%d",temp->cost);
+      sprintf(checkray[po][6],"%d",temp->ac_count);
+      sprintf(checkray[po][7],"%d",temp->ac_cost);
+      po++;
+      break;
+    }
+    else continue;
+  }
+  temp = temp->next;
+ }
+ printf("No of matching results = %d  \n\n ",po);
+ for(int cnt1=0;cnt1<po;cnt1++)
+ {
+    printf("\n%d)   Train name:  %s     Train Source: DELHI\nTrain departure time:  %s     Train destination:  %s     Train Arrival time:  %s    Seats Available in NON-AC coach:  %s\n     Cost(in rupees) of NON-AC:  %s\n     Seats Available in AC coach:  %s\n     Cost(in rupees) of AC:  %s\n\n", cnt1+1,checkray[cnt1][0],checkray[cnt1][3],checkray[cnt1][1],checkray[cnt1][2],checkray[cnt1][4],checkray[cnt1][5],checkray[cnt1][6],checkray[cnt1][7]);
+ }
+return NULL;
+}
